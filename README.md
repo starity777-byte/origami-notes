@@ -1,10 +1,15 @@
 # Origami Notes · 折纸笔记
 
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-在线直接试玩-B4693A.svg)](https://starity777-byte.github.io/origami-notes/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-4E86B8.svg)](./LICENSE)
 [![Zero Build](https://img.shields.io/badge/Build-Zero%20Dependency%20HTML-6E8A42.svg)](#快速体验)
 [![Obsidian Compatible](https://img.shields.io/badge/Storage-Local%20Obsidian%20Vault-8B6CEF.svg)](#连接本地-obsidian-库可选)
 
 > **在对话旁长出笔记**——在极简 AI 伴读聊天里随手划选任意一句话，拖进右侧 A4 折纸笔记本，即时生长为结构化文档、自由白板、矢量涂鸦与本地 Obsidian 知识星图。
+
+🔗 **在线试玩（免安装，纯浏览器即开即用）**：
+- **伴读分屏（主界面）**：https://starity777-byte.github.io/origami-notes/
+- **独立书桌 & 知识星图**：https://starity777-byte.github.io/origami-notes/desk.html
 
 ---
 
