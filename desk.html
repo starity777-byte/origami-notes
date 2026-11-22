@@ -8,7 +8,7 @@
 :root{
   --bg:#F5EAE1; --bg2:#EFE2D6; --ink:#5C493C; --ink2:#958476; --ink3:#B9AC9E; --line:#E3D5C7;
   --field:#FBF4EC; --go:#B4693A; --go-ink:#FBF4EC;
-  --paper:#FBF4E8; --paper-wb:#FFFDF9; --paper-ink:#4A433C; --tutor-note:#8C8278;
+  --paper:#FBF4E8; --paper-wb:#FFFDF9; --paper-ink:#4A433C; --quote-note:#8C8278;
   --accent:#4E86B8; --sel-bg:rgba(78,134,184,.18); --menu-bg:#FFFDF9; --menu-hover:rgba(120,100,70,.08);
   --hand:"KaiTi","STKaiti","Kaiti SC","楷体",serif;
   --soft:"Songti SC","STSong","Noto Serif SC","PingFang SC","Hiragino Sans GB","Microsoft YaHei UI",serif;
@@ -19,7 +19,7 @@
 body.night{
   --bg:#262626; --bg2:#191919; --ink:#DADADA; --ink2:#999999; --ink3:#686868; --line:#363636;
   --field:#242424; --go:#9B7BF7; --go-ink:#FFFFFF;
-  --paper:#1E1E1E; --paper-wb:#1E1E1E; --paper-ink:#DCDCDC; --tutor-note:#909090;
+  --paper:#1E1E1E; --paper-wb:#1E1E1E; --paper-ink:#DCDCDC; --quote-note:#909090;
   --accent:#8B6CEF; --sel-bg:rgba(139,108,239,.32); --menu-bg:#242424; --menu-hover:#323232;
 }
 *{box-sizing:border-box;margin:0;padding:0}
@@ -173,7 +173,7 @@ body.night .hl-purple{background-color:rgba(139,108,239,.24)!important}
 .rich p,.ProseMirror p{margin:2px 0}
 .rich ul,.ProseMirror ul,.rich ol,.ProseMirror ol{padding-left:18px;margin:2px 0}
 .rich li,.ProseMirror li{margin:2px 0}
-.rich blockquote,.ProseMirror blockquote{margin:3px 0;padding-left:10px;border-left:2px solid color-mix(in srgb,var(--accent) 55%,var(--ink3));color:var(--tutor-note)}
+.rich blockquote,.ProseMirror blockquote{margin:3px 0;padding-left:10px;border-left:2px solid color-mix(in srgb,var(--accent) 55%,var(--ink3));color:var(--quote-note)}
 .rich code,.ProseMirror code{font-family:var(--mono);font-size:12.5px;background:color-mix(in srgb,var(--ink) 8%,transparent);padding:1px 5px;border-radius:4px}
 .rich pre,.ProseMirror pre{margin:5px 0;padding:8px 11px;border-radius:6px;background:color-mix(in srgb,var(--ink) 6%,transparent);font:12.5px/1.6 var(--mono);overflow-x:auto}
 .rich hr,.ProseMirror hr{border:0;border-top:1px solid var(--line);margin:8px 0}
@@ -184,7 +184,7 @@ body.night .hl-purple{background-color:rgba(139,108,239,.24)!important}
 .task-row.done .task-txt{text-decoration:line-through;opacity:.55}
 .task-txt{flex:1;outline:none;min-height:22px}
 
-.quote-row{padding:3px 5px;border-radius:8px;font:400 13.5px/1.88 var(--soft);color:var(--tutor-note);transition:background-color .16s,padding .16s}
+.quote-row{padding:3px 5px;border-radius:8px;font:400 13.5px/1.88 var(--soft);color:var(--quote-note);transition:background-color .16s,padding .16s}
 .quote-row .q-tag{font:400 10.5px var(--ui);opacity:.7;margin-right:7px;user-select:none}
 .img-row{position:relative;padding:4px;border-radius:8px;display:inline-block;max-width:100%;border:1px solid transparent;transition:border-color .15s}
 .img-row:hover,.img-row.resizing{border-color:color-mix(in srgb,var(--accent) 45%,transparent)}
@@ -306,8 +306,8 @@ body.night .thumb-card.lined{background-image:linear-gradient(to bottom,rgba(255
 .tm-blk h3{font:600 16.5px/1.5 var(--soft);margin:0 0 4px}
 .tm-blk p{margin:3px 0}
 .tm-blk ul,.tm-blk ol{padding-left:22px;margin:3px 0}
-.tm-blk blockquote{margin:4px 0;padding-left:12px;border-left:3px solid var(--accent);color:var(--tutor-note)}
-.tm-quote{color:var(--tutor-note);font-size:14.5px;padding:4px 8px}
+.tm-blk blockquote{margin:4px 0;padding-left:12px;border-left:3px solid var(--accent);color:var(--quote-note)}
+.tm-quote{color:var(--quote-note);font-size:14.5px;padding:4px 8px}
 .tm-task{display:flex;align-items:flex-start;gap:8px;font-size:15px}
 .tm-task.done{text-decoration:line-through;opacity:.55}
 .tm-img img{display:block;max-width:100%;max-height:300px;object-fit:contain;border-radius:6px}
@@ -404,9 +404,9 @@ body.night .tm-img.is-svg img{mix-blend-mode:normal;filter:invert(.88) hue-rotat
 <!-- 顶栏 -->
 <header class="topbar">
   <div class="top-left">
-    <a class="tbtn" id="tutorLink" href="./index.html" style="text-decoration:none" title="预览接入 AI 导师聊天旁的伴读形态">
+    <a class="tbtn" id="splitLink" href="./index.html" style="text-decoration:none" title="切换为对话 + 笔记双栏视图">
       <svg viewBox="0 0 24 24"><rect x="3.5" y="4.5" width="17" height="15" rx="2.5"/><path d="M12 4.5v15"/><path d="M6.5 9.5h3M6.5 13h2.5"/></svg>
-      <span>导师伴读</span>
+      <span>对话分屏</span>
     </a>
     <button type="button" class="tbtn" id="graphToggle" title="本地知识星图可视化">
       <svg viewBox="0 0 24 24"><circle cx="6" cy="7" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="12" cy="17" r="2.8"/><path d="M8.2 8.2L10.6 14.6M16.2 7.8L13.5 14.6M8.5 6.8L15.5 6.2"/></svg>
@@ -586,9 +586,9 @@ function mdToBlocks(md=''){
   };
   for(const line of lines){
     const tr = line.trim();
-    if(tr.startsWith('> 导师：') || tr.startsWith('> · 导师')){
+    if(tr.startsWith('> 摘录：') || tr.startsWith('> · 摘录')){
       flush();
-      blocks.push({ id: nextId('q'), type: 'quote', hl: '', text: tr.replace(/^>\s*(·\s*)?导师[：:]?\s*/, ''), x: 350, y: 40 + blocks.length * 110, w: 280, h: 100 });
+      blocks.push({ id: nextId('q'), type: 'quote', hl: '', text: tr.replace(/^>\s*(·\s*)?摘录[：:]?\s*/, ''), x: 350, y: 40 + blocks.length * 110, w: 280, h: 100 });
     } else if(/^- \[([ xX])\]\s+/.test(tr)){
       flush();
       const m = tr.match(/^- \[([ xX])\]\s+(.*)$/);
@@ -649,7 +649,7 @@ function pageToMarkdown(page){
   const parts = [];
   (page.blocks || []).forEach(b => {
     if(b.type === 'text'){ const m = htmlToMd(b.html); if(m) parts.push(m); }
-    else if(b.type === 'quote'){ if(b.text) parts.push('> 导师：' + b.text); }
+    else if(b.type === 'quote'){ if(b.text) parts.push('> 摘录：' + b.text); }
     else if(b.type === 'task'){ parts.push(`- [${b.done?'x':' '}] ${b.text||''}`); }
   });
   return parts.join('\n\n');
@@ -1387,7 +1387,7 @@ function renderBookStage(){
         tr.appendChild(cb); tr.appendChild(txt); content.appendChild(tr);
       } else if(blk.type === 'quote'){
         const q = document.createElement('div'); q.className = 'quote-row' + (blk.hl ? ' ' + blk.hl : '');
-        q.innerHTML = '<span class="q-tag">· 导师</span><span></span>'; q.lastChild.textContent = blk.text;
+        q.innerHTML = '<span class="q-tag">· 摘录</span><span></span>'; q.lastChild.textContent = blk.text;
         content.appendChild(q);
       } else if(blk.type === 'web'){
         const w = document.createElement('div'); w.className = 'quote-row';
@@ -1625,7 +1625,7 @@ function buildBoardLayer(layer, book, page){
       node.innerHTML = `<div class="task-row ${blk.done?'done':''}"><input type="checkbox" ${blk.done?'checked':''}><span class="task-txt">${escapeHtml(blk.text||'')}</span></div>`;
       node.querySelector('input').onchange = ev => { blk.done = ev.target.checked; scheduleSavePage(book, page); renderBookStage(); };
     } else if(blk.type === 'quote'){
-      node.innerHTML = `<div class="quote-row"><span class="q-tag">· 导师</span>${escapeHtml(blk.text)}</div>`;
+      node.innerHTML = `<div class="quote-row"><span class="q-tag">· 摘录</span>${escapeHtml(blk.text)}</div>`;
     } else if(blk.type === 'web'){
       node.innerHTML = `<a href="${escapeHtml(blk.url||'#')}" target="_blank" style="color:var(--accent);text-decoration:none">↗ ${escapeHtml(blk.label||blk.url)}</a>`;
     } else if(blk.type === 'image'){
@@ -1952,7 +1952,7 @@ function exportPagesAsHtml(book, pages, fileTitle){
     const blks = pg.blocks.map(b => {
       if(b.type==='text') return `<div class="blk ${b.hl||''}">${b.html}</div>`;
       if(b.type==='task') return `<div class="blk ${b.hl||''}">${b.done?'☑':'☐'} ${escapeHtml(b.text||'')}</div>`;
-      if(b.type==='quote') return `<div class="blk q ${b.hl||''}">· 导师 ${escapeHtml(b.text||'')}</div>`;
+      if(b.type==='quote') return `<div class="blk q ${b.hl||''}">· 摘录 ${escapeHtml(b.text||'')}</div>`;
       return `<div class="blk"><img src="${b.src}" style="max-width:100%"></div>`;
     }).join('');
     const ink = strokesToSvg(pg.strokes || []);
@@ -2165,7 +2165,7 @@ function renderDrawer(){
         }).join('');
         const nodesHtml = pg.blocks.map(b => {
           const st = `left:${b.x||36}px;top:${b.y||36}px;width:${b.w||240}px;height:${b.h||96}px`;
-          const inner = b.type==='image' ? `<img src="${b.src}">` : b.type==='quote' ? `<div class="tm-quote">· 导师 ${escapeHtml(b.text||'')}</div>` : b.type==='task' ? `<div class="tm-task ${b.done?'done':''}"><span>${b.done?'☑':'☐'}</span><span>${escapeHtml(b.text||'')}</span></div>` : (b.html||'');
+          const inner = b.type==='image' ? `<img src="${b.src}">` : b.type==='quote' ? `<div class="tm-quote">· 摘录 ${escapeHtml(b.text||'')}</div>` : b.type==='task' ? `<div class="tm-task ${b.done?'done':''}"><span>${b.done?'☑':'☐'}</span><span>${escapeHtml(b.text||'')}</span></div>` : (b.html||'');
           return `<div class="tm-wb-node ${b.hl||''}" style="${st}">${inner}</div>`;
         }).join('');
         innerHtml += `<div class="tm-board"><svg class="tm-wb-svg" viewBox="0 0 760 880">${edgePaths}</svg>${nodesHtml}</div>`;
@@ -2173,7 +2173,7 @@ function renderDrawer(){
         const blksHtml = (pg.blocks||[]).map(b => {
           if(b.type === 'text') return `<div class="tm-blk ${b.hl||''}">${b.html||''}</div>`;
           if(b.type === 'task') return `<div class="tm-blk tm-task ${b.hl||''} ${b.done?'done':''}"><span>${b.done?'☑':'☐'}</span><span>${escapeHtml(b.text||'')}</span></div>`;
-          if(b.type === 'quote') return `<div class="tm-blk tm-quote ${b.hl||''}">· 导师 ${escapeHtml(b.text||'')}</div>`;
+          if(b.type === 'quote') return `<div class="tm-blk tm-quote ${b.hl||''}">· 摘录 ${escapeHtml(b.text||'')}</div>`;
           return `<div class="tm-blk tm-img ${b.isSvg?'is-svg':''}"><img src="${b.src}" style="width:${b.imgW||260}px"></div>`;
         }).join('');
         innerHtml += `<div class="tm-doc">${blksHtml}</div>`;

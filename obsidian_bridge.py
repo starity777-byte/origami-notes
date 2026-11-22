@@ -262,7 +262,7 @@ class BridgeHandler(http.server.SimpleHTTPRequestHandler):
             return self._send_json({"ok": True, "vaultPath": str(load_vault_path())})
         if parsed.path == "/api/vault":
             return self._send_json(scan_vault(load_vault_path()))
-        if parsed.path in ("/", "", "/tutor", "/tutor/"):
+        if parsed.path in ("/", "", "/split", "/split/"):
             self.path = "/index.html"
         elif parsed.path in ("/desk", "/desk/"):
             self.path = "/desk.html"

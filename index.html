@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AI 导师 · 伴读折纸笔记</title>
+<title>折纸笔记 · 对话长出笔记</title>
 <style>
 :root{
   --bg:#F5EAE1; --bg2:#EFE2D6; --ink:#5C493C; --ink2:#958476; --ink3:#B9AC9E; --line:#E3D5C7;
-  --field:#FBF4EC; --bubble:#EAE0D4; --paper:#FBF4E8; --paper-wb:#FFFDF9; --paper-ink:#4A433C; --tutor-note:#8C8278;
+  --field:#FBF4EC; --bubble:#EAE0D4; --paper:#FBF4E8; --paper-wb:#FFFDF9; --paper-ink:#4A433C; --quote-note:#8C8278;
   --accent:#4E86B8; --sel-bg:rgba(78,134,184,.18); --menu-bg:#FFFDF9; --menu-hover:rgba(120,100,70,.08);
   --soft:"Songti SC","STSong","Noto Serif SC","PingFang SC","Hiragino Sans GB","Microsoft YaHei UI",serif;
   --ui:"PingFang SC","Hiragino Sans GB","Segoe UI","Microsoft YaHei UI","Noto Sans SC",system-ui,sans-serif;
@@ -16,7 +16,7 @@
 }
 body.night{
   --bg:#262626; --bg2:#191919; --ink:#DADADA; --ink2:#999999; --ink3:#686868; --line:#363636;
-  --field:#242424; --bubble:#303030; --paper:#1E1E1E; --paper-wb:#1E1E1E; --paper-ink:#DCDCDC; --tutor-note:#909090;
+  --field:#242424; --bubble:#303030; --paper:#1E1E1E; --paper-wb:#1E1E1E; --paper-ink:#DCDCDC; --quote-note:#909090;
   --accent:#8B6CEF; --sel-bg:rgba(139,108,239,.32); --menu-bg:#242424; --menu-hover:#323232;
 }
 *{box-sizing:border-box;margin:0;padding:0}
@@ -35,7 +35,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--ui);transition:back
 .nav-btn svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
 .nav-sp{flex:1}
 
-/* ───── 左侧：AI 导师极简对话区 ───── */
+/* ───── 左侧：极简对话区 ───── */
 .chat-pane{flex:1;min-width:340px;display:flex;flex-direction:column;position:relative;padding:12px 24px 18px 16px}
 .chat-head{height:36px;display:flex;align-items:center;gap:10px;flex:none;color:var(--ink2);font-size:12.5px}
 .chat-back{width:28px;height:28px;border:0;border-radius:8px;background:transparent;color:var(--ink2);cursor:pointer;display:grid;place-items:center}
@@ -187,13 +187,13 @@ body.night .hl-purple{background-color:rgba(139,108,239,.24)!important}
 .rich h3{font:600 13.6px/1.5 var(--soft);margin:0 0 2px}
 .rich p{margin:2px 0}
 .rich ul,.rich ol{padding-left:18px;margin:2px 0}
-.rich blockquote{margin:3px 0;padding-left:9px;border-left:2px solid var(--accent);color:var(--tutor-note)}
+.rich blockquote{margin:3px 0;padding-left:9px;border-left:2px solid var(--accent);color:var(--quote-note)}
 .rich code{font-family:var(--mono);font-size:12px;background:color-mix(in srgb,var(--ink) 8%,transparent);padding:1px 4px;border-radius:4px}
 .task-row{display:flex;align-items:flex-start;gap:7px;padding:2px 4px;border-radius:8px;font:400 13.2px/1.82 var(--soft)}
 .task-row input{margin-top:5px;accent-color:var(--accent);cursor:pointer;flex:none}
 .task-row.done .task-txt{text-decoration:line-through;opacity:.55}
 .task-txt{flex:1;outline:none;cursor:text}
-.quote-row{padding:2px 4px;border-radius:8px;font:400 13px/1.84 var(--soft);color:var(--tutor-note);cursor:text}
+.quote-row{padding:2px 4px;border-radius:8px;font:400 13px/1.84 var(--soft);color:var(--quote-note);cursor:text}
 .quote-row .q-tag{font:400 10px var(--ui);opacity:.72;margin-right:6px;user-select:none}
 
 /* Obsidian 风格可拖拽右下角缩放图片块 */
@@ -287,7 +287,7 @@ body.night .thumb-card{background-image:linear-gradient(to right,rgba(255,255,25
 .tm-blk h1{font:700 22px/1.4 var(--soft)}
 .tm-blk h2{font:600 19px/1.45 var(--soft)}
 .tm-blk ul,.tm-blk ol{padding-left:22px}
-.tm-quote{color:var(--tutor-note);font-size:14.5px}
+.tm-quote{color:var(--quote-note);font-size:14.5px}
 .tm-img img{display:block;max-width:100%;height:auto;object-fit:contain}
 .tm-img.is-svg img{mix-blend-mode:multiply}
 body.night .tm-img.is-svg img{mix-blend-mode:normal;filter:invert(.88) hue-rotate(180deg)}
@@ -345,23 +345,23 @@ body.night .tm-img.is-svg img{mix-blend-mode:normal;filter:invert(.88) hue-rotat
 <div class="app">
   <!-- 最左极简导航栏 -->
   <nav class="nav-rail">
-    <div class="brand" title="AI 导师">
+    <div class="brand" title="折纸笔记">
       <svg viewBox="0 0 28 28" width="24" height="24"><path d="M5 7l10-3 8 7-6 13-11-4z" fill="#6F8F4A"/><path d="M15 4l8 7-11 2z" fill="#89A962"/></svg>
     </div>
     <button type="button" class="nav-btn" title="主页"><svg viewBox="0 0 24 24"><path d="M4 11l8-6.5L20 11v8.5a1 1 0 0 1-1 1h-4.5v-5.5h-5v5.5H5a1 1 0 0 1-1-1z"/></svg></button>
-    <button type="button" class="nav-btn on" id="navNbToggle" title="展开 / 收起右侧伴读笔记本"><svg viewBox="0 0 24 24"><path d="M4.5 6.5A2.5 2.5 0 0 1 7 4h11.5v16H7a2.5 2.5 0 0 0-2.5 2z"/><path d="M4.5 6.5v15.5"/></svg></button>
+    <button type="button" class="nav-btn on" id="navNbToggle" title="展开 / 收起右侧笔记本"><svg viewBox="0 0 24 24"><path d="M4.5 6.5A2.5 2.5 0 0 1 7 4h11.5v16H7a2.5 2.5 0 0 0-2.5 2z"/><path d="M4.5 6.5v15.5"/></svg></button>
     <a class="nav-btn" href="./desk.html" title="进入独立全屏折纸书桌"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2.5"/><path d="M9 9h6M9 13h6M9 17h4"/></svg></a>
     <div class="nav-sp"></div>
     <button type="button" class="nav-btn" id="themeBtn" title="切换暗夜模式（Obsidian 炭黑）"><svg viewBox="0 0 24 24"><path d="M19.5 14.5A7.5 7.5 0 0 1 9.5 4.5a7.5 7.5 0 1 0 10 10z"/></svg></button>
   </nav>
 
-  <!-- 左侧：AI 导师极简对话区 -->
+  <!-- 左侧：极简对话区 -->
   <section class="chat-pane">
     <div class="chat-head">
       <button type="button" class="chat-back" title="返回"><svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg></button>
-      <span>微积分伴读 · 函数的形状与极值</span>
+      <span>微积分随聊 · 函数的形状与极值</span>
       <div class="chat-hint">
-        <span>划选导师文字可拖入右侧笔记</span>
+        <span>划选回复文字可拖入右侧笔记</span>
         <span class="vault-mini"><i id="vaultDot"></i><span id="vaultName">连接中…</span></span>
       </div>
     </div>
@@ -461,7 +461,7 @@ body.night .tm-img.is-svg img{mix-blend-mode:normal;filter:invert(.88) hue-rotat
   </aside>
 </div>
 
-<button type="button" class="dock-pill" id="dockPill" title="展开伴读笔记本">折纸笔记</button>
+<button type="button" class="dock-pill" id="dockPill" title="展开笔记本">折纸笔记</button>
 <div class="sel-handle" id="selHandle"><svg viewBox="0 0 24 24"><path d="M9 5h6M9 12h6M9 19h6"/></svg><span>拖入笔记</span></div>
 
 <div class="quick-add-pop" id="quickAddPop">
@@ -532,7 +532,7 @@ function mdToBlocks(md){
       blocks.push({ id: nextId('tk'), type: 'task', hl: '', done: /^-\s+\[[xX]\]/.test(l), text: l.replace(/^-\s+\[[ xX]\]\s+/,''), x:28, y:28+blocks.length*80, w:260, h:54 });
     } else if(/^>\s+/.test(l)){
       flush();
-      blocks.push({ id: nextId('q'), type: 'quote', hl: '', text: l.replace(/^>\s+/,'').replace(/^·\s*导师\s*/,''), x:28, y:28+blocks.length*95, w:280, h:82 });
+      blocks.push({ id: nextId('q'), type: 'quote', hl: '', text: l.replace(/^>\s+/,'').replace(/^·\s*摘录\s*/,''), x:28, y:28+blocks.length*95, w:280, h:82 });
     } else buf.push(l);
   }
   flush();
@@ -564,7 +564,7 @@ function pageToMarkdown(page){
   return page.blocks.map(b => {
     if(b.type==='text') return htmlToMd(b.html);
     if(b.type==='task') return `- [${b.done?'x':' '}] ${b.text||''}`;
-    if(b.type==='quote') return `> · 导师 ${b.text||''}`;
+    if(b.type==='quote') return `> · 摘录 ${b.text||''}`;
     if(b.type==='group') return `### ${b.label||'分组'}`;
     if(b.type==='web') return `[${b.label||b.url}](${b.url})`;
     return b.src && b.src.startsWith('data:') ? `![插图](${b.src})` : '';
@@ -798,7 +798,7 @@ function renderStage(){
         tr.append(cb, tt); content.appendChild(tr);
       } else if(blk.type === 'quote'){
         const qr = document.createElement('div'); qr.className = 'quote-row'+(blk.hl?' '+blk.hl:'');
-        const qt = document.createElement('span'); qt.className='q-tag'; qt.textContent='· 导师';
+        const qt = document.createElement('span'); qt.className='q-tag'; qt.textContent='· 摘录';
         const qb = document.createElement('span'); qb.contentEditable='true'; qb.textContent=blk.text||'';
         qb.oninput = () => { blk.text = qb.textContent; scheduleSavePage(book, pg); };
         qr.addEventListener('contextmenu', e => openBlockCtx(e, book, pg, blk, null));
@@ -883,7 +883,7 @@ function renderStage(){
         } else if(blk.type === 'image'){
           const im = document.createElement('img'); im.src = blk.src; nd.appendChild(im);
         } else if(blk.type === 'quote'){
-          nd.innerHTML = `<div class="quote-row"><span class="q-tag">· 导师</span>${escapeHtml(blk.text||'')}</div>`;
+          nd.innerHTML = `<div class="quote-row"><span class="q-tag">· 摘录</span>${escapeHtml(blk.text||'')}</div>`;
         } else if(blk.type === 'task'){
           nd.innerHTML = `<div class="task-row ${blk.done?'done':''}"><span>${blk.done?'☑':'☐'}</span><span>${escapeHtml(blk.text||'')}</span></div>`;
         } else if(blk.type === 'web'){
@@ -1086,7 +1086,7 @@ function openBoardCtx(e, book, page, boardL){
   ctxMenu.style.top = Math.max(8, Math.min(innerHeight - r.height - 8, e.clientY)) + 'px';
 }
 
-/* ───── 文字块拖拽调序 + 导师划词拖拽（均带清晰落地线） ───── */
+/* ───── 文字块拖拽调序 + 对话划词拖拽（均带清晰落地线） ───── */
 function startBlkDrag(e, book, page, blk, rowEl, blksWrap, dropLine){
   e.preventDefault(); e.stopPropagation();
   const ghost = document.createElement('div'); ghost.className = 'blk-drag-ghost';
@@ -1171,7 +1171,7 @@ addEventListener('mouseup', () => {
   }
 });
 
-/* ───── 左侧导师回复划词拖拽 ───── */
+/* ───── 左侧对话回复划词拖拽 ───── */
 const selHandle = $('selHandle');
 let pendingSelText = '';
 document.addEventListener('selectionchange', () => {
@@ -1190,7 +1190,7 @@ selHandle.addEventListener('mousedown', e => {
   e.preventDefault(); selHandle.classList.remove('show');
   if(APP.docked) setDocked(false);
   const ghost = document.createElement('div'); ghost.className = 'blk-drag-ghost';
-  ghost.textContent = '· 导师 ' + pendingSelText.slice(0, 28);
+  ghost.textContent = '· 摘录 ' + pendingSelText.slice(0, 28);
   ghost.style.left = (e.clientX+12)+'px'; ghost.style.top = (e.clientY-12)+'px';
   document.body.appendChild(ghost);
   selDrag = { text: pendingSelText, ghost, dropTarget: null };
@@ -1385,7 +1385,7 @@ function renderDrawer(){
       const mini = document.createElement('div'); mini.className = 'thumb-mini-stage';
       const blks = (pg.blocks||[]).map(b => {
         if(b.type==='text') return `<div class="tm-blk ${b.hl||''}">${b.html||''}</div>`;
-        if(b.type==='quote') return `<div class="tm-blk tm-quote ${b.hl||''}">· 导师 ${escapeHtml(b.text||'')}</div>`;
+        if(b.type==='quote') return `<div class="tm-blk tm-quote ${b.hl||''}">· 摘录 ${escapeHtml(b.text||'')}</div>`;
         if(b.type==='task') return `<div class="tm-blk">${b.done?'☑':'☐'} ${escapeHtml(b.text||'')}</div>`;
         if(b.type==='image') return `<div class="tm-blk tm-img ${b.isSvg?'is-svg':''}"><img src="${b.src}" style="width:${b.imgW||240}px"></div>`;
         return '';
